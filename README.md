@@ -138,12 +138,6 @@ O `bootstrap_cve_2024_6485_param_check.py` é utilizado para validar se parâmet
 
 O script testa parâmetros comuns, injeta um payload controlado e verifica se ele aparece dentro de `data-loading-text`. Caso encontre reflexo, tenta acionar o estado de loading do botão para validar se existe possibilidade de execução do conteúdo.
 
-### Quando usar
-
-Use este script quando houver suspeita de que valores enviados pela URL sejam utilizados dinamicamente pela aplicação em botões, mensagens, labels, títulos ou atributos HTML.
-
-Ele é mais indicado para cenários onde existe reflexo de entrada do usuário na página, como mensagens de erro, status de operação, textos de botão ou parâmetros usados para montar conteúdo visual.
-
 ### Exemplo básico
 
 ```bash
@@ -171,12 +165,6 @@ python3 bootstrap_cve_2024_6485_param_check.py -u "https://exemplo.com.br/login"
 O `bootstrap_cve_2024_6485_dom_probe.py` é utilizado para validar o comportamento do DOM relacionado à **CVE-2024-6485**. Ele verifica a presença de elementos candidatos, jQuery, Bootstrap Button Plugin e tenta acionar o payload no contexto real do navegador.
 
 O script injeta um payload controlado no atributo `data-loading-text`, aciona o estado de loading do botão e verifica se houve execução de JavaScript.
-
-### Quando usar
-
-Use este script como validação principal quando o objetivo for confirmar se a página possui o componente vulnerável e se o Bootstrap Button Plugin processa o atributo `data-loading-text` de forma insegura.
-
-Ele é mais indicado para páginas que possuem botões Bootstrap, formulários, fluxos de login, cadastro, checkout, recuperação de senha ou qualquer tela com interação baseada em botões.
 
 ### Exemplo básico
 
